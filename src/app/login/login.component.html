@@ -1,0 +1,39 @@
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+<form [formGroup]="signInAccount" *ngIf="signIn" (submit)="signinsubmit()">
+    <h3>Login Here</h3>
+
+    <label for="username" style="color: black;" >Email</label>
+    <input type="text" placeholder="Email" id="username" style="color: black;" formControlName="Email">
+
+    <label for="password" style="color: black;">Password</label>
+    <input type="password" placeholder="Password" id="password" style="color: black;" formControlName="Password">
+
+    <button style="color: black;border-color: black;" type="submit" for="signInAccount" [ngStyle] ="{'pointer-events':signInAccount.invalid ? 'none': '','color': signInAccount.invalid ? 'red': 'black'}"
+    type="submit">Log In</button>
+    <div class="social" style="color: black;">
+      <div class="go" style="color: black;" (click)="signUp = true;signIn = false">  Sign up</div>
+      <div class="fb" style="color: black;">  Forgot Password</div>
+    </div>
+</form>
+<form *ngIf="signUp"  [formGroup]="signUpAccount" (submit)="signupsubmit()">
+  <h3>Sign Up</h3>
+
+  <label for="email" style="color: black;">Email</label>
+  <input type="email" placeholder="Email" id="email" style="color: black;" formControlName="Email" >
+
+  <label for="username" style="color: black;">Username</label>
+  <input type="text" placeholder="Type username" id="username" style="color: black;" formControlName="UserName">
+
+  <label for="password" style="color: black;">Password</label>
+  <input type="password" placeholder="Type Password" id="password" style="color: black;" formControlName="Password">
+
+  <button style="color: black;border-color: black;" [ngStyle] ="{'pointer-events':signUpAccount.invalid ? 'none': '','color': signUpAccount.invalid ? 'red': 'black'}" 
+  type="submit">Sign up</button>
+  <div class="social" style="color: black;">
+    <div class="go" style="color: black;" (click)="signIn = true;signUp = false">  Sign in</div>
+    <!-- <div class="fb" style="color: black;">  Forgot Password</div> -->
+  </div>
+</form>

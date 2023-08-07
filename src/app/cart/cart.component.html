@@ -1,0 +1,49 @@
+<div class="main">
+  <app-top-bar></app-top-bar>
+  <div style="display:flex;flex-wrap:wrap; width:100%;align-items: center;justify-content: center;">
+    <!-- <div *ngFor="let product of filteredData">
+          <p>
+            {{product.name}}
+          </p>
+      </div> -->
+    <div class="container page-wrapper" *ngFor="let product of cartData">
+      <div class="page-inner">
+        <div class="row">
+          <div class="el-wrapper">
+            <div class="box-up">
+              <img class="img" style="height:160px;width:130px" src="{{product.imageURL}}" alt="product.name">
+              <div class="img-info">
+                <div class="info-inner">
+                  <span class="p-name">{{product.name}}</span>
+                  <span class="p-company">{{product.type}}</span>
+                  <span class="p-company">{{product.gender}}</span>
+                </div>
+                <div class="a-size">Available Quantity : <span class="size">{{product.quantity}}</span></div>
+              </div>
+            </div>
+  
+            <div class="box-down">
+              <div class="h-bg">
+                <div class="h-bg-inner"></div>
+              </div>
+  
+              <div class="cart">
+                <span class="price">{{product.currency}}{{product.price}}</span>
+                <span class="add-to-cart">
+                  <button class="txt">Buy</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="cartData.length ==0" style="display:flex;flex-direction: column;justify-content: center; align-items:center;height: 90vh;">
+      <img src="https://i.imgur.com/dCdflKN.png" width="180" height="180" class="img-fluid mb-4 mr-3">
+      <h3 style="margin-left :10px;"><strong>Your Cart is Empty</strong></h3>
+      <!-- <h4>Add something to make me happy :)</h4> -->
+      <button routerLink="/products" class="glow-on-hover" data-abc="true" style="width: 10vw ;margin-left :10px;">continue shopping</button>
+  
+    </div>
+  </div>
+</div>

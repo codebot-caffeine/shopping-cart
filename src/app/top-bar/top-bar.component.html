@@ -1,0 +1,8 @@
+<div class="top-bar" *ngIf="loggedIn">
+    <p class="font-top-bar">K-Mart</p>
+    <div>
+      <button class="glow-on-hover mr-2" routerLink="/products">Products</button>
+      <button class="glow-on-hover mr-2" title="Go to cart" routerLink="/cart">Cart</button>
+      <button class="glow-on-hover mr-2" (click)="backToSignIn()">Log-out</button>
+    </div>
+</div>
