@@ -1,32 +1,36 @@
 import { Injectable } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+// import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonServiceService {
 
-  constructor(public toastr: ToastrService) { }
+  constructor() { }
 
   showSuccess(message:any) {
-    this.toastr.success(message, 'Success', {
-      timeOut: 3000,
-    });
+    // this.toastr.success(message, 'Success', {
+    //   timeOut: 3000,
+    // });
+    alert(message)
   }
   showError(message:any) {
-    this.toastr.error(message, 'Error', {
-      timeOut: 3000,
-    });
+    // this.toastr.error(message, 'Error', {
+    //   timeOut: 3000,
+    // });
+    alert(message)
   }
   showInfo(message:any) {
-    this.toastr.info(message, 'Note', {
-      timeOut: 3000,
-    });
+    // this.toastr.info(message, 'Note', {
+    //   timeOut: 3000,
+    // });
+    alert(message)
   }
   showWarning(message:any) {
-    this.toastr.warning(message, '', {
-      timeOut: 3000,
-    });
+    // this.toastr.warning(message, '', {
+    //   timeOut: 3000,
+    // });
+    alert(message)
   }
 
 }
