@@ -9,7 +9,7 @@ import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-// import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -25,13 +25,13 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    // ToastrModule.forRoot({
-    //   closeButton: true,
-    //   timeOut: 3000, // 15 seconds
-    //   progressBar: true,
-    //   preventDuplicates: true,
-    //   countDuplicates: false,
-    // })
+    ToastrModule.forRoot({
+      closeButton: true,
+      timeOut: 3000, // 15 seconds
+      progressBar: true,
+      preventDuplicates: true,
+      countDuplicates: false,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
